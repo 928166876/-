@@ -3,7 +3,7 @@
 
 using namespace std;
 
-//归并排序递归向量版（不稳定，非原地）
+//归并排序递归向量版（稳定，非原地）
 void func(vector<int>& nums, vector<int>& tmp, int start, int end){
     if(start >= end) return;
     int len = end - start;
