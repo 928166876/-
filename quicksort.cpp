@@ -3,7 +3,7 @@
 
 using namespace std;
 
-//基本版冒泡法排序（不稳定，原地）重要！！！
+//经典快速排序！！！重要！！！
 void func(vector<int>& nums, int start, int end){
     if(start >= end) return ;
     int left = start;
@@ -15,13 +15,11 @@ void func(vector<int>& nums, int start, int end){
 
         while(left < right && nums[left] <= key) left++;
         if(left < right) nums[right--] = nums[left];
-
-        nums[left] = key;
-
-        func(nums, 0, left - 1);
-        func(nums, left + 1, end);
     }
-
+    nums[left] = key;
+    
+    func(nums, 0, left - 1);
+    func(nums, left + 1, end);
 }
 
 
